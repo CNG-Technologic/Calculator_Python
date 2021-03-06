@@ -19,3 +19,8 @@ def delenie(a, b):
 
 def koren(a):
     return sqrt(a)
+
+
+def stepen(a, b):
+    return pow(a, b)
+
