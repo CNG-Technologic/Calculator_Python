@@ -23,4 +23,3 @@ def koren(a):
 
 def stepen(a, b):
     return pow(a, b)
-

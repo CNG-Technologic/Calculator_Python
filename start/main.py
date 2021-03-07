@@ -1,6 +1,6 @@
 from start.MainStart import start_main
 
-print("Калькулятор Python Alpha 1.3")
+print("Калькулятор Python Alpha 1.4")
 
 
 def start_void():
