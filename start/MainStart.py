@@ -7,19 +7,16 @@ from common.data import help_text
 from compulation.more import descriminant
 from compulation.more import factorial
 from compulation.basic import stepen
+from compulation.piCompulation import pi_void
+import math
 
 
 def start_main():
-    print("Что ты хочешь сделать?")
-    operator = input()
+    operator = input("Что ты хочешь сделать? (help - все функции)")
 
-    if operator == "+" or operator == "-" or operator == "*" or \
-            operator == "/" or operator == "k" or operator == "d" \
-            or operator == "f" or operator == "!" or operator == "s" \
-            or operator == "?" or operator == "help":
-
-        if operator == "?" or operator == "help":
-            help_text()
+    if operator == "+" or operator == "-" or operator == "*" or operator == "/" or operator == "k" or operator == "d" \
+            or operator == "f" or operator == "!" or operator == "s" or operator == "pi" or operator == "?" \
+            or operator == "help":
 
         if operator == "+" or operator == "-" or operator == "*" or operator == "/":
             a = float(input("Введи 1 число: "))
@@ -63,13 +60,26 @@ def start_main():
             rest = factorial(a)
             print(rest)
 
+        if operator == "pi":
+            print("pi = ", math.pi)
+            operator = input("Продолжить действия с pi? (y/n): ")
+
+            if operator == "y":
+                pi_void()
+            elif operator == "n":
+                print("Возвращаемся назад...")
+            else:
+                print("Комманда <", operator, "> не найдена")
+
+        if operator == "?" or operator == "help":
+            help_text()
+
         start_main()
 
     elif operator == "e" or operator == "е":
 
-        if operator == "е" or operator == "e":
-            print("Ты действительно хочешь выйти?")
-            full_exit()
+        print("Ты действительно хочешь выйти?")
+        full_exit()
 
     else:
         print("Команда < ", operator, " > не найдена")
